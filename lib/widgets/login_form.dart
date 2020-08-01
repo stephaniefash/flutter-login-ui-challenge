@@ -27,7 +27,7 @@ class LoginFormState extends State<LoginForm> {
                 child: Column(children: <Widget>[
                   _singleTextField(emailOrPhoneText),
                   SizedBox(height: 20),
-                  _singleTextField(passwordText),
+                  _singleTextField(passwordText, hideText: true),
                 ])),
           ),
         ),
@@ -35,8 +35,9 @@ class LoginFormState extends State<LoginForm> {
     );
   }
 
-  _singleTextField(String hintText) {
+  _singleTextField(String hintText, {hideText = false}) {
     return TextFormField(
+      obscureText: hideText,
       decoration: InputDecoration(
         labelText: hintText,
         labelStyle: TextStyle(fontFamily: kPlayFairDisplayFont, letterSpacing: 1.2),
