@@ -29,11 +29,9 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    height: 150,
+                    height: 250,
                     child: LoginForm(),
                   ),
-                  customDefaultText(forgotPasswordText),
-                  customButton(Colors.redAccent, loginText, 100),
                   customDefaultText(continueWithSocialText),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

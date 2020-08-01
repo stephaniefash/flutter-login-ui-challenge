@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:login_ui/constants.dart';
 
+import 'custom_widgets.dart';
+
 class LoginForm extends StatefulWidget {
   @override
   LoginFormState createState() {
@@ -28,7 +30,11 @@ class LoginFormState extends State<LoginForm> {
                   _singleTextField(emailOrPhoneText),
                   SizedBox(height: 20),
                   _singleTextField(passwordText, hideText: true),
-                ])),
+                  SizedBox(height: 20),
+                  customDefaultText(forgotPasswordText),
+                  SizedBox(height: 20),
+                  customButton(Colors.redAccent, loginText, 100),
+                ],),),
           ),
         ),
       ),
@@ -38,6 +44,12 @@ class LoginFormState extends State<LoginForm> {
   _singleTextField(String hintText, {hideText = false}) {
     return TextFormField(
       obscureText: hideText,
+      validator: (value){
+        if (value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         labelText: hintText,
         labelStyle: TextStyle(fontFamily: kPlayFairDisplayFont, letterSpacing: 1.2),
