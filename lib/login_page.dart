@@ -26,8 +26,8 @@ class _LoginPageState extends State<LoginPage>
     );
 
     _offsetAnimation = Tween(
-      begin: const Offset(0, 2.0),
-      end: Offset.zero,
+      begin: const Offset(0, 1.5),
+      end:  const Offset(0, 0.05),
     ).animate(CurvedAnimation(
       parent: _controller,
       curve: Curves.elasticIn,
@@ -65,13 +65,16 @@ class _LoginPageState extends State<LoginPage>
                         topRight: const Radius.circular(50.0),
                       )),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
                         height: 300,
                         child: LoginForm(),
                       ),
                       customDefaultText(continueWithSocialText),
+                      SizedBox(
+                        height: 30,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
