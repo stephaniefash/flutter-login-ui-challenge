@@ -7,3 +7,4 @@ const String facebookText =   "Facebook";
 const String githubText =   "Github";
 const String loginText =   "Login";
 const String welcomeBackText =   "Welcome back";
+const String formErrorMessage =   "Please enter some text'";

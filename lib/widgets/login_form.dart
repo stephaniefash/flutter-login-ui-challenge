@@ -43,7 +43,6 @@ class LoginFormState extends State<LoginForm> {
 
   _handleFormSubmission(){
     if (_formKey.currentState.validate()) {
-      print('submitted');
     }
   }
 
@@ -51,10 +50,7 @@ class LoginFormState extends State<LoginForm> {
     return TextFormField(
       obscureText: hideText,
       validator: (value){
-        if (value.isEmpty) {
-          return 'Please enter some text';
-        }
-        return null;
+        return value.isEmpty ? formErrorMessage : null;
       },
       decoration: InputDecoration(
         labelText: hintText,
