@@ -15,12 +15,12 @@ headerAndSubheadingWidget(String heading, String subheading) {
   );
 }
 
-customButton(Color color, String text, double horizontalPadding) {
+customButton(Color color, String text, double horizontalPadding, Function onPressed) {
   return FlatButton(
     padding: EdgeInsets.symmetric(vertical: 12, horizontal: horizontalPadding),
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(50.0)),
-    onPressed: () {},
+    onPressed: onPressed != null ? onPressed : (){},
     color: color,
     textColor: Colors.white,
     child: Text(text, style: TextStyle(fontSize: 14)),

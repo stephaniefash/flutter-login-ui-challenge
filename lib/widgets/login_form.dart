@@ -33,12 +33,18 @@ class LoginFormState extends State<LoginForm> {
                   SizedBox(height: 20),
                   customDefaultText(forgotPasswordText),
                   SizedBox(height: 20),
-                  customButton(Colors.redAccent, loginText, 100),
+                  customButton(Colors.redAccent, loginText, 100, _handleFormSubmission),
                 ],),),
           ),
         ),
       ),
     );
+  }
+
+  _handleFormSubmission(){
+    if (_formKey.currentState.validate()) {
+      print('submitted');
+    }
   }
 
   _singleTextField(String hintText, {hideText = false}) {
@@ -54,13 +60,13 @@ class LoginFormState extends State<LoginForm> {
         labelText: hintText,
         labelStyle: TextStyle(fontFamily: kPlayFairDisplayFont, letterSpacing: 1.2),
         contentPadding: EdgeInsets.fromLTRB(20,20,20,20),
-        focusedBorder: OutlineInputBorder(
+        border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25.0),
           borderSide: BorderSide(
             color: Colors.blue,
           ),
         ),
-        enabledBorder: OutlineInputBorder(
+        errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25.0),
           borderSide: BorderSide(
             color: Colors.redAccent,

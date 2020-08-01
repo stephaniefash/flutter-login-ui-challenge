@@ -29,15 +29,15 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    height: 250,
+                    height: 300,
                     child: LoginForm(),
                   ),
                   customDefaultText(continueWithSocialText),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      customButton(Colors.blue, facebookText, 40),
-                      customButton(Colors.black, githubText, 40),
+                      customButton(Colors.blue, facebookText, 40, null),
+                      customButton(Colors.black, githubText, 40, null),
                     ],
                   )
                 ],
