@@ -33,7 +33,9 @@ class _LoginPageState extends State<LoginPage>
       curve: Curves.elasticIn,
     ));
 
+    Future.delayed(const Duration(seconds: 1), () {
     _controller.forward();
+    });
   }
 
   @override
@@ -45,6 +47,7 @@ class _LoginPageState extends State<LoginPage>
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: new BoxDecoration(color: Colors.black),
       child: Column(
         children: [
           SlideTransition(
