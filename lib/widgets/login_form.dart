@@ -1,6 +1,7 @@
 // Define a custom Form widget.
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_ui/constants.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -24,9 +25,9 @@ class LoginFormState extends State<LoginForm> {
             child: Form(
                 key: _formKey,
                 child: Column(children: <Widget>[
-                  _singleTextField('Email or Phone Number'),
+                  _singleTextField(emailOrPhoneText),
                   SizedBox(height: 20),
-                  _singleTextField('Password'),
+                  _singleTextField(passwordText),
                 ])),
           ),
         ),
@@ -38,7 +39,7 @@ class LoginFormState extends State<LoginForm> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: hintText,
-        labelStyle: TextStyle(fontFamily: "PlayFairDisplay", letterSpacing: 1.2),
+        labelStyle: TextStyle(fontFamily: kPlayFairDisplayFont, letterSpacing: 1.2),
         contentPadding: EdgeInsets.fromLTRB(20,20,20,20),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25.0),

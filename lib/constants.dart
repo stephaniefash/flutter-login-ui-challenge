@@ -1,0 +1,9 @@
+const String kPlayFairDisplayFont =   "PlayFairDisplay";
+const String emailOrPhoneText =   "Email or Phone Number";
+const String passwordText =   "Password";
+const String continueWithSocialText =   "Continue with social media";
+const String forgotPasswordText =   "Forgot Password?";
+const String facebookText =   "Facebook";
+const String githubText =   "Github";
+const String loginText =   "Login";
+const String welcomeBackText =   "Welcome back";

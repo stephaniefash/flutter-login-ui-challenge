@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login_ui/constants.dart';
 
 headerAndSubheadingWidget(String heading, String subheading) {
   return Padding(
@@ -35,7 +36,7 @@ _customHeadingText(String text, double fontSize) {
         text,
         style: TextStyle(
           fontSize: fontSize,
-          fontFamily: "PlayFairDisplay",
+          fontFamily: kPlayFairDisplayFont,
           color: Colors.white,
         ),
       ),
@@ -48,7 +49,7 @@ customDefaultText(String text){
     color: Colors.transparent,
     child: Text(
       text,
-      style: TextStyle(fontSize: 13, color: Colors.grey),
+      style: TextStyle(fontSize: 15, color: Colors.grey),
     ),
   );
 }

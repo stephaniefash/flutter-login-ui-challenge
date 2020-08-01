@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_ui/constants.dart';
 import 'package:login_ui/widgets/custom_widgets.dart';
 import 'package:login_ui/widgets/login_form.dart';
 
@@ -14,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       child: Column(
         children: [
-          headerAndSubheadingWidget("Login", "Welcome back"),
+          headerAndSubheadingWidget(loginText, welcomeBackText),
           Expanded(
             child: Container(
               padding: EdgeInsets.only(top: 50, bottom: 40),
@@ -31,14 +32,14 @@ class _LoginPageState extends State<LoginPage> {
                     height: 150,
                     child: LoginForm(),
                   ),
-                  customDefaultText('Forgot Password?'),
-                  customButton(Colors.redAccent, "login", 100),
-                  customDefaultText('Continue with social media'),
+                  customDefaultText(forgotPasswordText),
+                  customButton(Colors.redAccent, loginText, 100),
+                  customDefaultText(continueWithSocialText),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      customButton(Colors.blue, "Facebook", 40),
-                      customButton(Colors.black, "Github", 40),
+                      customButton(Colors.blue, facebookText, 40),
+                      customButton(Colors.black, githubText, 40),
                     ],
                   )
                 ],
