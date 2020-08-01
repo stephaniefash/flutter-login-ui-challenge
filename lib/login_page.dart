@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_ui/widgets/custom_widgets.dart';
+import 'package:login_ui/widgets/login_form.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -8,6 +11,42 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(
+        children: [
+          headerAndSubheadingWidget("Login", "Welcome back"),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.only(top: 50, bottom: 40),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: new BorderRadius.only(
+                    topLeft: const Radius.circular(50.0),
+                    topRight: const Radius.circular(50.0),
+                  )),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    height: 150,
+                    child: LoginForm(),
+                  ),
+                  customDefaultText('Forgot Password?'),
+                  customButton(Colors.redAccent, "login", 100),
+                  customDefaultText('Continue with social media'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      customButton(Colors.blue, "Facebook", 40),
+                      customButton(Colors.black, "Github", 40),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
